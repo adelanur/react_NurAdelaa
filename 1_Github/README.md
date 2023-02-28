@@ -1,4 +1,5 @@
-versioning : mengatur versi pada source code program version control system yang populer digunakan oleh developer dalam mengembangkan software secara bersam-asama yaitu git. Cara install GIT: -Masuk browser cari install git -Mulai Run administrator -Next page sampai finish dan terinstall
+versioning : mengatur versi pada source code program 
+version control system yang populer digunakan oleh developer dalam mengembangkan software secara bersam-asama yaitu git. Cara install GIT: -Masuk browser cari install git -Mulai Run administrator -Next page sampai finish dan terinstall
 
 Set Up git : 
 #git config
