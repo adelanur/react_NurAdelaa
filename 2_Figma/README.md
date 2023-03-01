@@ -1,20 +1,20 @@
-versioning : mengatur versi pada source code program 
-version control system yang populer digunakan oleh developer dalam mengembangkan software secara bersama-sama yaitu git. 
-Cara install GIT: 
--Masuk browser cari install git 
--Mulai Run administrator 
--Next page sampai finish dan terinstall
+Figma adalah : pembuatan tampilan interface web maupun aplikasi bagi UI/UX desainer agar lebih mudah
 
-Set Up git : 
-#git config  
-$ git config --global user.name "nama" 
-$ git config --global user.email "email" 
+Cara menggunakan figma :
 
-#start with init 
-$ git init 
-$ git remote add [remote_name] [remote_repo_url] 
-$ git push -u [remote_name] [local_branch_name] 
+-Masuk ke laman figma.com
 
-#start with existing project, sart working on the project 
-$ git clone [link repo github.git] 
-$ cd my-projek
+-Lakukan registrasi dengan email atau akun Google
+
+
+-Pilih paket starter (penggunaan pribadi atau profesional)
+
+-Tambahkan page untuk lembar kerja
+
+-Setelah itu, kalian bisa menggunakan template yang tersedia
+
+-Pelajari fitur yang ada atau kalian bisa menginstall plugin
+
+-Selanjutnya, kalian bisa melakukan prototyping
+
+-Terakhir, bisa melakukan ekspor pada hasil kerja dalam berbagai format seperti JPG, PNG, PDF, dan SVG
