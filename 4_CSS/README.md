@@ -18,8 +18,6 @@ cara menambahkan file CSS dalam HTML :
 
 -Inline CSS : digunakan untuk elemen tunggal pada HTML, diprioritaskan untuk menerapkan style unik 
 
-  //<h1 style="color:
-     #19355f;">Hello World</h1>
   
   CSS Selector 
   
