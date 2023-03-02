@@ -17,8 +17,9 @@ cara menambahkan file CSS dalam HTML :
 -Internal CSS: syntax ini bisa digunakan di dalam satu file HTML. didefinisikan di dalam elemen <style>, di dakam <head> atau di dalam <body>
 
 -Inline CSS : digunakan untuk elemen tunggal pada HTML, diprioritaskan untuk menerapkan style unik 
-  <h1 style="color:
-             #19355f;">Hello World</h1>
+
+  // <h1 style="color:
+             #19355f;">Hello World</h1>//
   
   CSS Selector 
   
