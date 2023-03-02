@@ -1,20 +1,27 @@
-versioning : mengatur versi pada source code program 
-version control system yang populer digunakan oleh developer dalam mengembangkan software secara bersama-sama yaitu git. 
-Cara install GIT: 
--Masuk browser cari install git 
--Mulai Run administrator 
--Next page sampai finish dan terinstall
+CSS (Cascading Style Sheets) : digunakan untuk menghias halaman web dari sebi color, size, font , background, width, height, dll . serta dapat mengatur posisi web (float, align,display,position,dll)
 
-Set Up git : 
-#git config  
-$ git config --global user.name "nama" 
-$ git config --global user.email "email" 
+tag table HTML
 
-#start with init 
-$ git init 
-$ git remote add [remote_name] [remote_repo_url] 
-$ git push -u [remote_name] [local_branch_name] 
+-membuat tabel : <table></table>
 
-#start with existing project, sart working on the project 
-$ git clone [link repo github.git] 
-$ cd my-projek
+-mendeklarasikan setiap baris table : <tr></tr>
+
+-mendeklarasikan setiap kolom table : <td></td>
+
+-untuk kolom pada tabel header <th></th>
+
+cara menambahkan file CSS dalam HTML :
+
+-External CSS:< link rel="stylesheet" href="main.css">
+
+-Internal CSS: syntax ini bisa digunakan di dalam satu file HTML. didefinisikan di dalam elemen <style>, di dakam <head> atau di dalam <body>
+
+-Inline CSS : digunakan untuk elemen tunggal pada HTML, diprioritaskan untuk menerapkan style unik 
+  <h1 style="color:
+             #19355f;">Hello World</h1>
+  
+  CSS Selector 
+  
+  - ID (#) : hanya dapat digunakan pada satu elemen p , hanya bisa pada satu halaman tidak boleh 2
+  
+  - Class (.) : dapat digunakan berulang kali, satu elemen dapat memiliki lebih satu class berbeda
