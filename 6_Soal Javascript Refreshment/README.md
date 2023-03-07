@@ -1,4 +1,4 @@
-JavaScript : bahasa pemprograman yang high-level, Scripting, Untyped dan Interpreted
+ JavaScript : bahasa pemprograman yang high-level, Scripting, Untyped dan Interpreted
 
 Variabel Var , Let , Const
 -Var : var dapat di deklarasikan ulang dan diperbaharui
