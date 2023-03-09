@@ -20,24 +20,24 @@ Method : sebuah fungsi yang terkait dengan object, membuat program sederhna sesu
 
 DOM (Document Object Model) : API untuk HTML yang merepresentasikan halaman web pada dokumen menjadi sebuah object.
 1. DOM selection method, macam dan kegunaan :
-  -getElementByld() : elemen
-  -getElementsByTagName : HTMLCollection
-  -getElementsByClassName : HTMLCollection
-  -querySelector() : element
-  -querySelectorAll() : nodeList
+  -getElementByld() : elemen,
+  -getElementsByTagName : HTMLCollection,
+  -getElementsByClassName : HTMLCollectio,n
+  -querySelector() : element,
+  -querySelectorAll() : nodeList,
   
  2. DOM Manipulation , macam dan kegunaan :
-  - elemen.innerHTML : merubah  isi dari tag yang sudah di seleksi 
-  - element.style.<propertyCSS> : merubah  style dari tag yang sudah di seleksi 
-  - element.setAttribute() : mengelola/memanipulasi attribut yanng sudah di seleksi
-  - element.classList.add() :mengelola/memanipulasi attribut yanng sudah di seleksi
+  - elemen.innerHTML : merubah  isi dari tag yang sudah di seleksi, 
+  - element.style.<propertyCSS> : merubah  style dari tag yang sudah di seleksi,
+  - element.setAttribute() : mengelola/memanipulasi attribut yanng sudah di seleksi,
+  - element.classList.add() :mengelola/memanipulasi attribut yanng sudah di seleksi,
   
  3. DOM Event , macam dan kegunaan :
-  - onclick : untuk klik mouse
-  - onchange: digunakan dalam kombinasi dengan validasi bidang input
-  - onblur : digunakan untuk meninggalkan kolom input
-  - onmouseover : digunakan untuk pengguna mengarahkan mouse ke atas pada suatu object
-  - onmouseout : digunakan untuk pengguna mengarahkan mouse keluar pada suatu object
-  - oncopy : untuk mengcopy suatu object
+  - onclick : untuk klik mouse,
+  - onchange: digunakan dalam kombinasi dengan validasi bidang input,
+  - onblur : digunakan untuk meninggalkan kolom input,
+  - onmouseover : digunakan untuk pengguna mengarahkan mouse ke atas pada suatu object,
+  - onmouseout : digunakan untuk pengguna mengarahkan mouse keluar pada suatu object,
+  - oncopy : untuk mengcopy suatu object,
   
  
