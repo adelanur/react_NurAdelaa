@@ -1,55 +1,30 @@
-<<<<<<< HEAD
-CSS (Cascading Style Sheets) : digunakan untuk menghias halaman web dari sebi color, size, font , background, width, height, dll . serta dapat mengatur posisi web (float, align,display,position,dll)
+JSX (Javascript XML) : ekstensi javascript
+Alasan Menggunakan JSX :
+	•JSX dibuatkan berdasarkan fakta kalua logika rendering sangat terikat dengan logic UI
+	•Saparation of Technology -> Saparation of Concerns
+Menentukan atribut dengan JXS 
+	•Tanda kutip untuk menentukan stri g literal
+	•Kurung kurawal untuk menyematkan ekspresi javaScript
+Komponen React : bagian kode yang dapat digunakan Kembali untuk menentukan tampilan, behavior , state sebagai UI
 
-tag table HTML
-
--membuat tabel : <table></table>
-
--mendeklarasikan setiap baris table : <tr></tr>
-
--mendeklarasikan setiap kolom table : <td></td>
-
--untuk kolom pada tabel header <th></th>
-
-cara menambahkan file CSS dalam HTML :
-
--External CSS:< link rel="stylesheet" href="main.css">
-
--Internal CSS: syntax ini bisa digunakan di dalam satu file HTML. didefinisikan di dalam elemen <style>, di dakam <head> atau di dalam <body>
-
--Inline CSS : digunakan untuk elemen tunggal pada HTML, diprioritaskan untuk menerapkan style unik 
-
-  
-  CSS Selector 
-  
-  - ID (#) : hanya dapat digunakan pada satu elemen p , hanya bisa pada satu halaman tidak boleh 2
-  
-  - Class (.) : dapat digunakan berulang kali, satu elemen dapat memiliki lebih satu class berbeda
-=======
-CSS (Cascading Style Sheets) : digunakan untuk menghias halaman web dari sebi color, size, font , background, width, height, dll . serta dapat mengatur posisi web (float, align,display,position,dll)
-
-tag table HTML
-
--membuat tabel : <table></table>
-
--mendeklarasikan setiap baris table : <tr></tr>
-
--mendeklarasikan setiap kolom table : <td></td>
-
--untuk kolom pada tabel header <th></th>
-
-cara menambahkan file CSS dalam HTML :
-
--External CSS:< link rel="stylesheet" href="main.css">
-
--Internal CSS: syntax ini bisa digunakan di dalam satu file HTML. didefinisikan di dalam elemen <style>, di dakam <head> atau di dalam <body>
-
--Inline CSS : digunakan untuk elemen tunggal pada HTML, diprioritaskan untuk menerapkan style unik 
-
-  
-  CSS Selector 
-  
-  - ID (#) : hanya dapat digunakan pada satu elemen p , hanya bisa pada satu halaman tidak boleh 2
-  
-  - Class (.) : dapat digunakan berulang kali, satu elemen dapat memiliki lebih satu class berbeda
->>>>>>> 7c5eb4be0a6cd5638efc336b51db97f08531a767
+Props (Properties)
+	•membuat kita dapat memberikan argument data pada componen  
+	•membuat komponen menjadi lebih dinamis
+	•props dioper ke component sama seperti memberikan atribut pada tag HTML
+	•props pada component adalah read-only dan tidak dapat diubah
+React Lifecycle : 
+	•Mounting
+	•Updating
+	•Unmounting
+Lifecycle method :
+	•Render() : sering dipakai, , required pada class component , pure function, tidak boleh ada setState()
+	•componentDidMount() : dipanggil sat component telah dirender untuk pertama kali. Tempat untuk pemanggilan API , boleh ada setState()
+	•componentDidUpdate() : dipanggil Ketika  terjadi update (props/state berubah)
+	•componentWillUnmount() : dipanggil Ketika component akan dihancurkan, cocok untuk clean up actions
+Render Bersyarat :
+	•menggunakan if
+	•inline if dengn operator &&
+	•inline if-Else dengan ternary conditional operator
+	•mencegah komponen untur rendering
+Struktur Direktori : react tidak memiliki pendapat (unopinionated) tentang bagaimana cara memasukkan file ke folder
+Styling : Classes dan CSS, Atribut Style , Modul CSS
