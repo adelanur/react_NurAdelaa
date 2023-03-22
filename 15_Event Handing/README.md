@@ -1,55 +1,23 @@
-<<<<<<< HEAD
-CSS (Cascading Style Sheets) : digunakan untuk menghias halaman web dari sebi color, size, font , background, width, height, dll . serta dapat mengatur posisi web (float, align,display,position,dll)
+*STATE : Data private dalam component
+ 1. Data bisa dimodifikasi 
+ 2. Bila terjad modifikasi akan merendr ulang
+ 3. Sifatnya Asynchronous
+ 4. Dipakai dalam class
 
-tag table HTML
+PERBEDAAN Stateful component & Stateless component
 
--membuat tabel : <table></table>
+*Stateful component :memiliki state dibuat dengan class, kelebihan dari class component adalah memiliki lifecycle
+ -tahu tentang aplikasi
+ -melakukan pengambilan data (fetching)
+ -berinteraksi dengan aplikasi
+ -tidak bisa digunakan lagi
+ -meneruskan status dan data ke anak-anaknya
 
--mendeklarasikan setiap baris table : <tr></tr>
+*Stateless component : tidak memiliki state hanya prop , biasanya menggunakan function karena lebih ringkas.
+ -tidak tahu tentang aplikasi
+ -tidak melakukan pengambilan data (fetching)
+ -tujuan utama visualisasi
+ -bisa digunakan lagi
+ -hanya berinteraksi dengan induk langsung
 
--mendeklarasikan setiap kolom table : <td></td>
-
--untuk kolom pada tabel header <th></th>
-
-cara menambahkan file CSS dalam HTML :
-
--External CSS:< link rel="stylesheet" href="main.css">
-
--Internal CSS: syntax ini bisa digunakan di dalam satu file HTML. didefinisikan di dalam elemen <style>, di dakam <head> atau di dalam <body>
-
--Inline CSS : digunakan untuk elemen tunggal pada HTML, diprioritaskan untuk menerapkan style unik 
-
-  
-  CSS Selector 
-  
-  - ID (#) : hanya dapat digunakan pada satu elemen p , hanya bisa pada satu halaman tidak boleh 2
-  
-  - Class (.) : dapat digunakan berulang kali, satu elemen dapat memiliki lebih satu class berbeda
-=======
-CSS (Cascading Style Sheets) : digunakan untuk menghias halaman web dari sebi color, size, font , background, width, height, dll . serta dapat mengatur posisi web (float, align,display,position,dll)
-
-tag table HTML
-
--membuat tabel : <table></table>
-
--mendeklarasikan setiap baris table : <tr></tr>
-
--mendeklarasikan setiap kolom table : <td></td>
-
--untuk kolom pada tabel header <th></th>
-
-cara menambahkan file CSS dalam HTML :
-
--External CSS:< link rel="stylesheet" href="main.css">
-
--Internal CSS: syntax ini bisa digunakan di dalam satu file HTML. didefinisikan di dalam elemen <style>, di dakam <head> atau di dalam <body>
-
--Inline CSS : digunakan untuk elemen tunggal pada HTML, diprioritaskan untuk menerapkan style unik 
-
-  
-  CSS Selector 
-  
-  - ID (#) : hanya dapat digunakan pada satu elemen p , hanya bisa pada satu halaman tidak boleh 2
-  
-  - Class (.) : dapat digunakan berulang kali, satu elemen dapat memiliki lebih satu class berbeda
->>>>>>> 7c5eb4be0a6cd5638efc336b51db97f08531a767
+HADLING EVENT : metode unntuk menangani sebuah event/aksi yang diberikan pengguna kepada sebuah komponen
