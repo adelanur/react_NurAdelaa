@@ -18,7 +18,7 @@ const Form = () => {
         <label htmlFor="">Product Category :</label>
         <input type="text" 
                name="kategori"
-               required />
+               required=""/>
       </div>
       <div className="form-group">
         <label htmlFor="">Product Freshness :</label>
