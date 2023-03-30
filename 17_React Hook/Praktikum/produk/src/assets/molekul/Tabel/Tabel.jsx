@@ -1,6 +1,7 @@
 import React from 'react'
+import { useState } from 'react'
 
-const Tabel = () => {
+const Tabel = ({data}) => {
   return (
     <div>
        {/* Membuat Tabel  */}
@@ -20,7 +21,19 @@ const Tabel = () => {
             <th>Product Price</th>
           </tr>
         </thead>
-        <tbody id="datatable"></tbody>
+        <tbody >
+          {data.map((item, index) =>(
+            <tr key={index}>
+              <td>{item.nama} </td>
+              <td>{item.kategori} </td>
+              <td>{item.freshness} </td>
+              <td>{item.deskripsi} </td>
+              <td>{item.price} </td>
+
+            </tr>
+          ))}
+
+        </tbody>
       </table>
     </div>
   </div>

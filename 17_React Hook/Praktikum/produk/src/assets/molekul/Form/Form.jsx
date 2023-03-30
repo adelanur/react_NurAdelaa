@@ -1,24 +1,30 @@
 import React from 'react'
 import { useState } from 'react'
+import Tabel from '../Tabel/Tabel';
 
 const Form = () => {
-    const[name, setName] = useState('');
-    const[kategori, setKategori] = useState('');
-    const[freshness, setFreshness] = useState('');
-    const[deskripsi, setDeskripsi] = useState('');
-    const[price, setPrice] = useState('');
+  const [data, setData] = useState([]);
+  const [form , setForm] = useState({nama:'', kategori:'', freshness:'', deskripsi:'', price:''});
+    // const[name, setName] = useState('');
+    // const[kategori, setKategori] = useState('');
+    // const[freshness, setFreshness] = useState('');
+    // const[deskripsi, setDeskripsi] = useState('');
+    // const[price, setPrice] = useState('');
 
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      const produk = {name, kategori, freshness, deskripsi, price};
-      console.log(produk);
-      // setName({name:""})
-      // setKategori({kategori:""})
-      // setFreshness({freshness:""})
-      // setDeskripsi({deskripsi:""})
-      // setPrice({price:""})
+      setData([...data, form]);
+      setForm({nama:'', kategori:'', freshness:'', deskripsi:'', price:''});
+      // const produk = {nama, kategori, freshness, deskripsi, price};
+      // console.log(produk);
+    
     }
+
+    const handleChange = (event) =>{
+      setForm({...form, [event.target.name]: event.target.value});
+    };
+
 
   return (
     <div>
@@ -29,44 +35,52 @@ const Form = () => {
       <div className="form-group">
         <label htmlFor="">Product Name :</label>
         <input type="text" 
+               name='nama'
                 className='form-control'
-                value={name}
-                onChange={(e) => setName(e.target.value)} />
+                value={form.nama}
+                onChange={handleChange} />
       </div>
       <div className="form-group">
         <label htmlFor="">Product Category :</label>
-        <input type="text" 
+        <input type="text"
+                name='kategori' 
                 className='form-control'
-               value={kategori}
-               onChange={(e) => setKategori(e.target.value)} />
+               value={form.kategori}
+               onChange={handleChange} />
       </div>
       <div className="form-group">
         <label htmlFor="">Product Freshness :</label>
         <input type="text" 
+                name='freshness'
                 className='form-control'
-                value={freshness}
-                onChange={(e) => setFreshness(e.target.value)}/>
+                value={form.freshness}
+                onChange={handleChange} />
       </div>
       <div className="form-group">
         <label htmlFor="">Additional Description :</label>
-        <input
+        <input type="text"
+              name='deskripsi'
            className='form-control'
-          value={deskripsi}
-               onChange={(e) => setDeskripsi(e.target.value)}
-        />
+          value={form.deskripsi}
+          onChange={handleChange} />
+        
       </div>
       <div className="form-group">
         <label htmlFor="">Product Price :</label>
         <input type="number"
+                name='price'
                 className='form-control'
-                value={price}
-               onChange={(e) => setPrice(e.target.value)} />
+                value={form.price}
+                onChange={handleChange} />
       </div>
         <br />
       <div className="btn-group">
         <button type="submit" className="btn btn-primary"> Submit </button>
       </div>
     </form>
+
+    <Tabel data={data}/>
+
   </div>
 </>
     </div>
