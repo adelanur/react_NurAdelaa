@@ -28,7 +28,8 @@ const Form = ({
       { id: uuidv4(), nama, kategori, foto, freshness, deskripsi, price },
     ];
     setData(updatedProduct);
-    setKategori("");
+    setNama("");
+    setKategori("choose");
     setFoto("");
     setFreshness("");
     setDeskripsi("");

@@ -37,6 +37,7 @@ const App = () => {
     });
 
     setData(updatedProduct);
+    setNama("");
     setKategori("");
     setFoto("");
     setFreshness("");
