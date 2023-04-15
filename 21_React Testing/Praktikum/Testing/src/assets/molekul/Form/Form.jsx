@@ -53,6 +53,7 @@ const Form = ({ formik, setIsEdit, isEdit, data, setData }) => {
                 className="form-control"
                 value={formik.values.nama}
                 onChange={formik.handleChange}
+                data-testid="productName"
               />
               {formik.errors.nama && (
                 <div className="error text-danger">{formik.errors.nama}</div>
@@ -184,7 +185,11 @@ const Form = ({ formik, setIsEdit, isEdit, data, setData }) => {
             </div>
             <br />
             <div className="btn-group">
-              <button type="submit" className="btn btn-primary">
+              <button
+                data-testid="submitbutton"
+                type="submit"
+                className="btn btn-primary"
+              >
                 {isEdit == true ? "update" : "Submit"}
               </button>
             </div>

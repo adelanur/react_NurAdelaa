@@ -27,11 +27,11 @@ const CreateProduct = ({ data, setData }) => {
     validationSchema: Yup.object({
       nama: Yup.string()
         .matches(/^[a-zA-Z ]+$/, "tidak boleh mengandung simbol")
-        .max(50, "product name tidak boleh melebihi 50 karakter")
+        .max(25, "product name tidak boleh melebihi 25 karakter")
         .required("produk harus diisi"),
 
       kategori: Yup.string()
-        .oneOf(["pilih1", "pilih2", "pilih3"], "Harap klik salah satu")
+        .oneOf(["pilih1", "pilih2", "pilih3"], "Harap pilih")
         .required(),
 
       foto: Yup.string().required("foto harus diisi"),
