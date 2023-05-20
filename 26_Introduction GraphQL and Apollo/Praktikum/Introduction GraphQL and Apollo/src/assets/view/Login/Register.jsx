@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import UserSlice from "../../config/UserSlice";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const users = useSelector((state) => state.Users.Users);
@@ -24,21 +24,22 @@ const Login = () => {
     }),
 
     onSubmit: (values) => {
-      const cariUser = [...users].find((user) => user.email === values.email);
-      if (
-        cariUser.email === values.email &&
-        cariUser.password === values.password
-      ) {
-        dispatch(UserSlice.actions.setLogin(true));
-        formik.resetForm();
-        navigate("/");
-      }
+      const UpdatedUser = [
+        ...users,
+        {
+          email: values.email,
+          password: values.password,
+        },
+      ];
+      dispatch(UserSlice.actions.updateUser(UpdatedUser));
+      formik.resetForm();
+      navigate("/Login");
     },
   });
   return (
     <div className="container " style={{ backgroundColor: "GrayText" }}>
       <div className="login" style={{ padding: "200px 0 40px 30%" }}>
-        <h3>HALAMAN LOGIN</h3> <br />
+        <h3>HALAMAN REGISTER</h3> <br />
         <form onSubmit={formik.handleSubmit}>
           <input
             className="form-control form-control-lg"
@@ -67,12 +68,13 @@ const Login = () => {
           {formik.errors.password && (
             <div className="error text-danger">{formik.errors.password}</div>
           )}{" "}
-          <div className="mb-5" style={{ color: "white" }}>
-            Belum Punya Akun? <a href="/Register">Daftar Dulu</a>
+          <br />
+          <div>
+            sudah punya akun <a href="/Login">login</a>
           </div>{" "}
           <br />
           <button type="submit" className="btn btn-info w-75 ms-5">
-            Login
+            Register
           </button>
         </form>
       </div>
@@ -80,4 +82,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
