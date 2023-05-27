@@ -12,7 +12,7 @@ import DetailProduct from "./assets/view/DetailProduct/DetailProduct";
 import { Provider } from "react-redux";
 import store, { persistedStore } from "./assets/config/store";
 import { PersistGate } from "redux-persist/integration/react";
-import Login from "./assets/view/Login/login";
+import Login from "./assets/view/Login/Login";
 import Register from "./assets/view/Login/register";
 import PrivateRoute from "./assets/PrivateRoot/PrivateRoute";
 
