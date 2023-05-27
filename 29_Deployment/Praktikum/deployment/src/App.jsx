@@ -13,7 +13,7 @@ import { Provider } from "react-redux";
 import store, { persistedStore } from "./assets/config/store";
 import { PersistGate } from "redux-persist/integration/react";
 import Login from "./assets/view/Login/Login";
-import Register from "./assets/view/Login/register";
+import Register from "./assets/view/Login/Register";
 import PrivateRoute from "./assets/PrivateRoot/PrivateRoute";
 import { ApolloProvider } from "@apollo/client";
 import client from "./assets/config/Apollo";
