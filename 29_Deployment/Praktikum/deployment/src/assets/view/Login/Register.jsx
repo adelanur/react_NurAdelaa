@@ -34,6 +34,7 @@ const Register = () => {
     }),
 
     onSubmit: (values) => {
+      console.log(values);
       user({
         variables: {
           email: values.email,
@@ -41,7 +42,7 @@ const Register = () => {
         },
       });
       formik.resetForm();
-      navigate("/login");
+      navigate("/Login");
     },
   });
   return (

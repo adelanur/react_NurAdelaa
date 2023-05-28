@@ -4,10 +4,10 @@ import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import UserSlice from "../../config/UserSlice";
 import { Link, useNavigate } from "react-router-dom";
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery, useSubscription } from "@apollo/client";
 
 const GET_USER = gql`
-  query MyQuery {
+  subscription MyQuery {
     user {
       email
       id
@@ -17,7 +17,7 @@ const GET_USER = gql`
 `;
 
 const Login = () => {
-  const { data: dataUser } = useQuery(GET_USER);
+  const { data: dataUser } = useSubscription(GET_USER);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const formik = useFormik({
@@ -37,6 +37,9 @@ const Login = () => {
     onSubmit: (values) => {
       const cariUser = dataUser?.user.find(
         (user) => user.email === values.email
+      );
+      console.log(
+        cariUser.email === values.email && cariUser.password === values.password
       );
       if (
         cariUser.email === values.email &&
