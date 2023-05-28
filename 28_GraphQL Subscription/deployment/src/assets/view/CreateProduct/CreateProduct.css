@@ -12,7 +12,12 @@
 form,
 input,
 textarea {
+  width: 80%;
+  /* margin-left: 25%; */
+}
+.form2 {
   width: 50%;
+  margin-left: 30%;
 }
 
 .form-group label {

@@ -1,14 +1,24 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useDispatch, useSelector } from "react-redux";
-import UserSlice from "../../config/UserSlice";
 import { useNavigate } from "react-router-dom";
+import { gql, useMutation } from "@apollo/client";
+
+const USER = gql`
+  mutation MyMutation($email: String!, $password: String!) {
+    insert_user_one(object: { email: $email, password: $password }) {
+      email
+      id
+      password
+    }
+  }
+`;
 
 const Register = () => {
+  const [user, { data: dataUser }] = useMutation(USER);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const users = useSelector((state) => state.Users.Users);
+  // const dispatch = useDispatch();
+  // const users = useSelector((state) => state.Users.Users);
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -24,16 +34,14 @@ const Register = () => {
     }),
 
     onSubmit: (values) => {
-      const UpdatedUser = [
-        ...users,
-        {
+      user({
+        variables: {
           email: values.email,
           password: values.password,
         },
-      ];
-      dispatch(UserSlice.actions.updateUser(UpdatedUser));
+      });
       formik.resetForm();
-      navigate("/Login");
+      navigate("/login");
     },
   });
   return (
