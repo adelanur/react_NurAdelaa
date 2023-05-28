@@ -9,12 +9,17 @@
 .form-label {
   margin-left: 40rem;
 }
+
 form,
 input,
 textarea {
-  width: 50%;
+  width: 60%;
+  margin-left: 25%;
 }
-
+.form2 {
+  width: 50%;
+  margin-left: 1rem;
+}
 .form-group label {
   display: block;
   margin: 2rem 0 0.5rem 0;

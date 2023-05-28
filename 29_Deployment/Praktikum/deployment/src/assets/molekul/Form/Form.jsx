@@ -49,7 +49,7 @@ const Form = ({ formik, setIsEdit, isEdit, data, setData }) => {
   return (
     <div>
       <>
-        <div>
+        <div className="form2">
           <form onSubmit={formik.handleSubmit}>
             <div className="form-group">
               <label htmlFor="">Product Name :</label>

@@ -1,14 +1,24 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useDispatch, useSelector } from "react-redux";
-import UserSlice from "../../config/UserSlice";
 import { useNavigate } from "react-router-dom";
+import { gql, useMutation } from "@apollo/client";
+
+const USER = gql`
+  mutation MyMutation($email: String!, $password: String!) {
+    insert_user_one(object: { email: $email, password: $password }) {
+      email
+      id
+      password
+    }
+  }
+`;
 
 const Register = () => {
+  const [user, { data: dataUser }] = useMutation(USER);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const users = useSelector((state) => state.Users.Users);
+  // const dispatch = useDispatch();
+  // const users = useSelector((state) => state.Users.Users);
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -24,25 +34,23 @@ const Register = () => {
     }),
 
     onSubmit: (values) => {
-      const UpdatedUser = [
-        ...users,
-        {
+      user({
+        variables: {
           email: values.email,
           password: values.password,
         },
-      ];
-      dispatch(UserSlice.actions.updateUser(UpdatedUser));
+      });
       formik.resetForm();
-      navigate("/Login");
+      navigate("/login");
     },
   });
   return (
     <div className="container " style={{ backgroundColor: "GrayText" }}>
       <div className="login" style={{ padding: "200px 0 40px 30%" }}>
         <h3>HALAMAN REGISTER</h3> <br />
-        <form onSubmit={formik.handleSubmit}>
+        <form className="form2" onSubmit={formik.handleSubmit}>
           <input
-            className="form-control form-control-lg"
+            className="form-control form-control-lg ms-1"
             type="email"
             name="email"
             id="email"
@@ -56,7 +64,7 @@ const Register = () => {
           )}{" "}
           <br />
           <input
-            className="form-control form-control-lg"
+            className="form-control form-control-lg ms-1"
             type="password"
             name="password"
             id="password"
@@ -68,14 +76,12 @@ const Register = () => {
           {formik.errors.password && (
             <div className="error text-danger">{formik.errors.password}</div>
           )}{" "}
-          <br />
-          <div>
-            sudah punya akun <a href="/Login">login</a>
-          </div>{" "}
-          <br />
-          <button type="submit" className="btn btn-info w-75 ms-5">
-            Register
-          </button>
+          <div className="mb-4 ms-5" style={{ color: "white" }}>
+            Belum Punya Akun? <a href="/Register">Daftar Dulu</a>
+            <button type="submit" className="btn btn-info w-75 mt-4">
+              Login
+            </button>
+          </div>
         </form>
       </div>
     </div>

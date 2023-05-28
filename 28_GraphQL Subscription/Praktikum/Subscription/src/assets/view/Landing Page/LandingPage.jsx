@@ -99,7 +99,7 @@ const LandingPage = () => {
                 Tamen quem nulla quae legam multos aute sint culpa legam noster
                 magna
               </p>
-              <form className="form1">
+              <form action="">
                 <input
                   type="text"
                   className="d-inline border border-black p-2 me-4 ms-5 "

@@ -4,11 +4,23 @@ import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import UserSlice from "../../config/UserSlice";
 import { useNavigate } from "react-router-dom";
+import { gql, useQuery } from "@apollo/client";
+
+const GET_USER = gql`
+  query MyQuery {
+    user {
+      email
+      id
+      password
+    }
+  }
+`;
 
 const Login = () => {
+  const { data: dataUser } = useQuery(GET_USER);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.Users.Users);
+  // const users = useSelector((state) => state.Users.Users);
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -24,14 +36,16 @@ const Login = () => {
     }),
 
     onSubmit: (values) => {
-      const cariUser = [...users].find((user) => user.email === values.email);
+      const cariUser = dataUser?.user.find(
+        (user) => user.email === values.email
+      );
       if (
         cariUser.email === values.email &&
         cariUser.password === values.password
       ) {
         dispatch(UserSlice.actions.setLogin(true));
         formik.resetForm();
-        navigate("/");
+        navigate("/CreateProduct");
       }
     },
   });
@@ -39,9 +53,9 @@ const Login = () => {
     <div className="container " style={{ backgroundColor: "GrayText" }}>
       <div className="login" style={{ padding: "200px 0 40px 30%" }}>
         <h3>HALAMAN LOGIN</h3> <br />
-        <form onSubmit={formik.handleSubmit}>
+        <form className="form2" onSubmit={formik.handleSubmit}>
           <input
-            className="form-control form-control-lg"
+            className="form-control form-control-lg ms-1"
             type="email"
             name="email"
             id="email"
@@ -55,7 +69,7 @@ const Login = () => {
           )}{" "}
           <br />
           <input
-            className="form-control form-control-lg"
+            className="form-control form-control-lg ms-1"
             type="password"
             name="password"
             id="password"
@@ -67,13 +81,12 @@ const Login = () => {
           {formik.errors.password && (
             <div className="error text-danger">{formik.errors.password}</div>
           )}{" "}
-          <div className="mb-5" style={{ color: "white" }}>
+          <div className="mb-4 ms-5" style={{ color: "white" }}>
             Belum Punya Akun? <a href="/Register">Daftar Dulu</a>
-          </div>{" "}
-          <br />
-          <button type="submit" className="btn btn-info w-75 ms-5">
-            Login
-          </button>
+            <button type="submit" className="btn btn-info w-75 mt-4">
+              Login
+            </button>
+          </div>
         </form>
       </div>
     </div>
