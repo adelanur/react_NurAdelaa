@@ -1,6 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import UserSlice from "../../config/UserSlice";
 import ListProduct from "./ListProduct";
@@ -54,9 +54,7 @@ const LandingPage = () => {
                   LogOut
                 </button>
               ) : (
-                <a href="/Login" className="nav-link">
-                  Login
-                </a>
+                <Link to={"/Login"}>Login</Link>
               )}
             </li>
           </ul>
@@ -83,7 +81,7 @@ const LandingPage = () => {
                 onClick={() => navigate("/CreateProduct")}
                 className="btn primary-button"
               >
-                <a href="">Get Started</a>
+                <Link>Get Started</Link>
               </button>
               <button className="btn banner-button">
                 <a href="">Watch Video</a>
