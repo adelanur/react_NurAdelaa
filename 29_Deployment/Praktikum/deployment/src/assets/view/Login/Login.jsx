@@ -20,7 +20,6 @@ const Login = () => {
   const { data: dataUser } = useQuery(GET_USER);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const users = useSelector((state) => state.Users.Users);
   const formik = useFormik({
     initialValues: {
       email: "",
