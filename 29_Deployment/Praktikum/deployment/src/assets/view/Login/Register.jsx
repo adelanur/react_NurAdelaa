@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { gql, useMutation } from "@apollo/client";
 
 const USER = gql`
@@ -78,7 +78,7 @@ const Register = () => {
           )}{" "}
           <br />
           <div>
-            sudah punya akun <a href="/Login">login</a>
+            sudah punya akun <Link to={"/Login"}>Login</Link>
           </div>{" "}
           <br />
           <button type="submit" className="btn btn-info w-75 ms-5">

@@ -82,7 +82,7 @@ const Login = () => {
             <div className="error text-danger">{formik.errors.password}</div>
           )}{" "}
           <div className="mb-5" style={{ color: "white" }}>
-            Belum Punya Akun? <a href="/Register">Daftar Dulu</a>
+            Belum Punya Akun? <Link to={"/Register"}>Daftar Dulu</Link>
           </div>{" "}
           <br />
           <button type="submit" className="btn btn-info w-75 ms-5">

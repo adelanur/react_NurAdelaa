@@ -81,7 +81,7 @@ const LandingPage = () => {
                 onClick={() => navigate("/CreateProduct")}
                 className="btn primary-button"
               >
-                <Link>Get Started</Link>
+                <Link to={"/CreateProduct"}>Get Started</Link>
               </button>
               <button className="btn banner-button">
                 <a href="">Watch Video</a>
